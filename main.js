@@ -1,7 +1,13 @@
-   // Your application has indicated there's an error
-    window.setTimeout(function(){
+window.onload = updateClock;
 
-        // Move to a new location or you can do something else
-        window.location.href = "https://www.google.co.in";
+var totalTime = 5;
 
-    }, 5000);
+function updateClock() {
+  document.getElementById('countdown').innerHTML = totalTime;
+  if(totalTime==0){
+        window.location.href = "https://m.youtube.com/watch?v=umMqQ5_h63M&feature=youtu.be";
+  }else{
+    totalTime-=1;
+    setTimeout("updateClock()",1000);
+  }
+}
